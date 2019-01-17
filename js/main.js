@@ -12,6 +12,9 @@ const UserComponent = {
   methods {
     logFromChild() {
       console.log("Logged from the component");
+    },
+    passEvent(){
+      this.$emit('shoutup');
     }
   }
 }
@@ -25,11 +28,15 @@ const UserComponent = {
     },
 
     methods: {
-
+      calledOnParent(){
+        console.log("This method lives in the main VM and was called from a component");
+      }
     },
+
 created: function() {
   console.log("This is the main vue instance")
 },
+
     components: {
       'activeusers' : UserComponent
     }

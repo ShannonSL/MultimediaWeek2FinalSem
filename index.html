@@ -23,7 +23,7 @@
 
       </article>
       <div id="app">
-        <activeusers name="Shannon" role="writer">
+        <activeusers name="Shannon" role="writer" @shoutup="calledOnParent">
 <h4>Active User Data:</h4>
         </activeusers>
         <activeusers name="Justin" role="I try to boss people">
@@ -40,7 +40,7 @@
       <p>{{ role }}</p>
       <hr>
 <button v-on:click="logFromChild">Clickety Click</button>
-<button>Run a main viewmodel function</button>
+<buttonv-on:click="passEvent">Run a main viewmodel function</button>
     </div>
 
     </template>
