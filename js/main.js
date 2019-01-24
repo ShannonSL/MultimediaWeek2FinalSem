@@ -10,15 +10,20 @@ const UsersPageComponent = {
 const ContactPageComponent = {
   template: "<h2>Thsi is the contact page</h2>"
 },
+
+const ErrorPageComponent = {
+  template: "<h2>Page not found! Try again...</h2>"
+},
 //routes are the path you're taking through the application
 //www.google.ca is a route; it's the route to the home page
 // www.sumpinsumpin/contact is the route to the contact page, etc.
 // each route gets mapped to a component that you define
 // and that component gets rendered in the <router-view> element
 const routes = [
-  { path: '/', name: 'home', component: 'HomePageComponent' },
-    { path: '/contact', name: 'contact', component: 'ContactPageComponent' },
-    {path: '/users', name: 'users', component: 'UsersPageComponent' }
+  { path: '/', name: 'home', component: HomePageComponent },
+  { path: '/contact', name: 'contact', component: ContactPageComponent },
+  {path: '/users', name: 'users', component: UsersPageComponent },
+  { path: '/*', name: 'error', component: ErrorPageComonent}
 ]
 
 const router = new VueRouter({
