@@ -1,49 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" >
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta http=-equiv="X-UA-Compatible" content="ie-edge">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
     <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.2/vue-router.min.js"></script>
   </head>
   <body>
     <main>
-      <h2>User Data for my App<h2>
-        <hr>
-        <article>
-          <h4 class="hidden"></h4>
-          <h5>Sumpin Sumpin</h5>
-         <p>
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    </p>
-         <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    </p>
-
-      </article>
-      <div id="app">
-        <activeusers name="Shannon" role="writer" @shoutup="calledOnParent">
-<h4>Active User Data:</h4>
-        </activeusers>
-        <activeusers name="Justin" role="I try to boss people">
-<h4>Active User Data:</h4>
-        </activeusers>
+            <div id="app">
+              <router-link :to="{ path: '/'}">Home</router-link>
+                <router-link :to="{ path: 'users'}">Users</router-link>
+                  <router-link :to="{ path: 'contact'}">Contact</router-link>
+          <router-view></router-view>
       </div>
-  </main>
+    </main>
 
-  <!--component templates -->
-<template id="userstemplate">
-  <div>
-    <slot></slot>
-      <p>{{ name }}</p>
-      <p>{{ role }}</p>
-      <hr>
-<button v-on:click="logFromChild">Clickety Click</button>
-<buttonv-on:click="passEvent">Run a main viewmodel function</button>
-    </div>
-
-    </template>
       <script src="js/main.js"></script>
 </body>
 </html>
