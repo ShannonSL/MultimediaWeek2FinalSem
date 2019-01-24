@@ -12,12 +12,18 @@
   <body>
     <main>
             <div id="app">
+              <!-- this is Vue's navigation element -->
               <router-link :to="{ path: '/'}">Home</router-link>
                 <router-link :to="{ path: 'users'}">Users</router-link>
                   <router-link :to="{ path: 'contact'}">Contact</router-link>
+
+                  <!-- Componenets get rendered here -->
+                  <transition name="fade" mode:="out-in">
           <router-view></router-view>
+          </transition>
       </div>
     </main>
+
 
       <script src="js/main.js"></script>
 </body>

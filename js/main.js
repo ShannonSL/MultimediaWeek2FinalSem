@@ -5,10 +5,10 @@ const HomePageComponent = {
 },
 
 const UsersPageComponent = {
-  template: "<h2>Thsi is the users page</h2>"
+  template: "<h2>This is the users page</h2>"
 },
 const ContactPageComponent = {
-  template: "<h2>Thsi is the contact page</h2>"
+  template: "<h2>This is the contact page</h2>"
 },
 
 const ErrorPageComponent = {
