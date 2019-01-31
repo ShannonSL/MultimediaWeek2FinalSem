@@ -14,8 +14,9 @@
   <body>
     <main>
             <div id="app">
+              <router-link v-if="authenticated" to="/login" v-on:click.native
     
-              <!-- Componenets get rendered here -->
+              <!-- Componenets get rendered here--!>
                   <transition name="fade" mode:="out-in">
           <router-view /> 
           </transition>

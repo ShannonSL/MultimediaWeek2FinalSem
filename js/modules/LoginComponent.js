@@ -24,6 +24,14 @@ export default {
 
             if (this.input.username != "" && this.input.password != "") {
                 //do the login check
+            if (this.input.password == this.$parent.mockAccount.password) {
+                //you're logged in!
+                console.log('logged in');
+                this.$emit("authenticated", true);
+                this.$router.replace({name: "users"});
+            }else {
+                console.log('login failed');
+            }
             }else {
                 console.log('username and password cannot be blank');
             }
