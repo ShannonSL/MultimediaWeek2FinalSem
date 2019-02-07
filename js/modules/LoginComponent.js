@@ -39,6 +39,30 @@ export default {
             console.log(this.$parent.mockAccount.username);
 
             if (this.input.username != "" && this.input.password != "") {
+
+                // fetch the data from the server and match passwords
+                let url = `./admin/admin_login.php`;
+
+                const formDara = new FormData();
+
+                FormData.append("usernane", this.input.username);
+                FormData.append("password", this.input.password);
+
+                fetch(url, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data =="Login Failed") {
+                        console.log('login attempt failed');
+                        return;
+                    }else {
+                        this.$emit("authenticated", true);
+                        this.$router.replace({ name: "users"} );
+                    }
+                })
+
                 //do the login check
             if (this.input.password == this.$parent.mockAccount.password) {
                 //you're logged in!
